@@ -10,7 +10,7 @@
         </div>
 
         <nav class="space-y-4">
-            @include('_nav.sidebar-links')
+            @include('_shared._partials.sidebar-links')
         </nav>
     </div>
 </div>
