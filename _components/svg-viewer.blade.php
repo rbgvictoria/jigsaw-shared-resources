@@ -1,5 +1,10 @@
 {{-- source/_components/svg-viewer.blade.php --}}
 @php
+    $container = \Illuminate\Container\Container::getInstance();
+    $jigsawPage = $container->has('pageData') ? $container->make('pageData')->page : null;
+
+    $baseUrl = $jigsawPage->baseUrl ?? '';
+
     $id = $id ?? 'svg-' . uniqid();
     $height = $height ?? '500px';
     $path = $path ?? '';
@@ -29,7 +34,7 @@
 
     {{-- Viewer Area --}}
     <div class="svg-viewer-container p-4 transition-all duration-300" style="height: {{ $height }};">
-        <object id="{{ $id }}" type="image/svg+xml" data="{{ $path }}" class="w-full h-full block">
+        <object id="{{ $id }}" type="image/svg+xml" data="{{ $baseUrl }}{{ $path }}" class="w-full h-full block">
             Your browser does not support SVG
         </object>
     </div>
