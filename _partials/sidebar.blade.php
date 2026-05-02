@@ -6,10 +6,26 @@
     </button>
 
     {{-- The Sidebar Content --}}
-    <nav id="sidebar-menu" class="hidden lg:block sticky top-20 pt-1.75"> {{-- Adds stickiness below the header --}}
-        <div class="bg-white border border-gray-200 rounded-xl p-6 pt-8 dark:border-gray-700 dark:bg-black">
-            <div class="mb-8">
-              @include('_shared._partials.sidebar-links')
+    <nav id="sidebar-menu" class="hidden lg:block sticky top-20 pt-1.75"> 
+        {{-- The Main Card (Fixed Frame) --}}
+        <div class="bg-white border border-gray-200 rounded-xl dark:border-gray-700 dark:bg-black">
+            
+            {{-- 1. Static Header (Inside the card, but above the scroll area) --}}
+            @if($page->documentationTitle)
+                <div class="px-6 pt-6 pb-4 border-b border-gray-100 dark:border-gray-800">
+                    <h2 class="text-sm font-bold tracking-widest text-primary-500 uppercase dark:text-primary-400">
+                        {{ $page->documentationTitle }}
+                    </h2>
+                </div>
+            @endif
+
+            {{-- 2. Inner Scrollable Div --}}
+            <div class="p-6 pt-4 overflow-y-auto custom-scrollbar" 
+                style="max-height: calc(100vh - 11rem);">
+                
+                <div class="mb-8">
+                  @include('_shared._partials.sidebar-links')
+                </div>
             </div>
 
         </div>

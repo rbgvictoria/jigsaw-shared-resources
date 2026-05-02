@@ -33,11 +33,11 @@
 
     <h3 class="text-sm font-bold uppercase tracking-wider mb-2 transition-colors duration-200 
         {{ $sectionActive 
-            ? 'text-green-600 dark:text-green-400' 
+            ? 'text-primary-600 dark:text-primary-400' 
             : ($isCollection  ? 'text-gray-600 dark:text-gray-400' : 'text-gray-900 dark:text-white') 
         }}">
         @if(!$isCollection)
-            <a href="{{ $item['url'] }}" class="hover:text-green-500">
+            <a href="{{ $item['url'] }}" class="hover:text-primary-500">
                 <span>{{ $label }}</span>
             </a>
         @else
@@ -52,8 +52,8 @@
                     <a href="{{ $subItem->getUrl() }}" 
                         class="block py-1 pl-4 text-sm transition-colors duration-100
                         {{ $linkActive 
-                            ? 'text-emerald-600 font-bold' 
-                            : 'text-gray-500 hover:text-gray-900 dark:hover:text-white' 
+                            ? 'text-primary-600 font-bold dark:text-primary-400' 
+                            : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white' 
                         }}">
                         {{ $subItem->title }}
                     </a>
