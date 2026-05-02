@@ -14,14 +14,6 @@
       {{-- This helper looks for the manifest at the project root --}}
       <link rel="stylesheet" href="{{ $page->baseUrl }}{{ vite('source/assets/css/main.css') }}">
       <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
-
-      {{-- Dynamic Branding --}}
-      <style>
-          :root {
-              --page-bg-from: {{ $page->bg_from ?? '#f0fdf4' }}; /* Default to green-50 */
-              --page-bg-to: {{ $page->bg_to ?? '#ecfdf5' }};   /* Default to emerald-50 */
-          }
-      </style>
   </head>
   
   <body class="fade-in min-h-screen bg-gradient-to-br from-[var(--page-bg-from)] via-white to-[var(--page-bg-to)] dark:from-gray-900 dark:via-gray-800 dark:to-gray-950 font-sans">
@@ -31,7 +23,7 @@
           @include('_shared._partials.sidebar')
           
           <main class="lg:col-span-3 prose prose-sm max-w-none dark:prose-invert">
-              <div class="bg-white border border-gray-200 rounded-xl mt-2 p-6 pt-8 dark:bg-black dark:border-gray-700">
+              <div class="bg-white border border-gray-200 rounded-xl mt-2 p-6 pt-6 dark:bg-black dark:border-gray-700">
                   
                   <div class="mb-8">
                       @include('_shared._partials.breadcrumbs')
