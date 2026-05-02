@@ -209,6 +209,10 @@
   }
 
   /* Handle Markdown Table Alignment */
+  & table {
+    @apply my-0;
+  }
+
   & table th[align="center"], 
   & table td[align="center"] {
     @apply text-center;
